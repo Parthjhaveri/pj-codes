@@ -6,12 +6,14 @@ export default class About extends React.Component {
 		super(props);
 
 		this.state = {
-			
+			proj_man: [],
+			web_desi: [],
+			web_devl: []
 		}
 	}
 
-	componentDidMount() {		
-
+	componentDidMount() {
+		console.log(this.props.madskills);
 	}
 
 	render() {
@@ -55,55 +57,21 @@ export default class About extends React.Component {
 							<p>Project Management</p>
 							<hr className="hr-green" />
 							<ul className="no-pad-mar no-ls">
-								<li>Agile</li>
-								<li>SCRUM</li>
-								<li>Jira</li>
-								<li>Trello</li>
-								<li>Slack</li>
-								<li>Basecamp</li>
+								
 							</ul>
 						</div>
 						<div className="slot md">
 							<p>Web Development</p>
 							<hr className="hr-green" /> 					
 							<ul className="no-pad-mar no-ls">
-								<li>HTML5</li>
-								<li>CSS3</li>
-								<li>CSS Animations</li>
-								<li>CSS BEM</li>
-								<li>SASS</li>
-								<li>JavaScript/ES6</li>
-								<li>D3 JS</li>
-								<li>jQuery</li>
-								<li>Redux</li>
-								<li>React JS</li>
-								<li>React Native</li>
-								<li>Angular JS</li>
-								<li>Node JS</li>
-								<li>Ionic 4/Studio</li>
-								<li>X-Code</li>
-								<li>Boostrap 4</li>
-								<li>Material UI</li>
-								<li>Mocha</li>
-								<li>Chai</li>
-								<li>Backstop JS</li>
-								<li>Chrome Debugging</li>
-								<li>Wordpress</li>
-								<li>SquareSpace</li>
-								<li>Magento</li>
-								<li>Woo Commerce</li>
+								
 							</ul>					
 						</div>
 						<div className="slot rt">				
 							<p>Web Design/Art</p>
 							<hr className="hr-green" /> 
 							<ul className="no-pad-mar no-ls">
-								<li>Adobe Illustrator</li>
-								<li>Photoshop</li>
-								<li>XD</li>
-								<li>Affinity Designer</li>
-								<li>InDesign</li>
-								<li>Sketch</li>						
+													
 							</ul>
 						</div>
 					</div>

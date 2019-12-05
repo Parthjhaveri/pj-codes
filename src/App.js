@@ -12,7 +12,16 @@ class App extends React.Component {
 		super(props);
 
 		this.state = {
-			skills_arr: []
+			home_skills: null
+		}
+
+		this.sendSkillProps = this.sendSkillProps.bind(this);
+	}
+
+	sendSkillProps(delta) {
+		return (previousState, currentProps) => {
+			console.log(delta);
+			// return {...previousState, home_skills: delta}
 		}
 	}
 
@@ -22,21 +31,15 @@ class App extends React.Component {
 		const db = firebase.firestore();
 		var skillset_ref = db.collection('skillset').doc('B5V0RPKajYlvhbSagIEY');
 
-		skillset_ref.get()
-
-		.then(function(doc) {
+		skillset_ref.onSnapshot((doc) => {
 		    if (doc.exists) {
-		        console.log("Document data:", doc.data());
-		    } else {
-		        // doc.data() will be undefined in this case
+		        this.setState(this.sendSkillProps(doc.data()));
+		    } 
+
+		    else {		        
 		        console.log("No such document!");
 		    }
-		})
-
-		.catch(function(err) {
-		    console.log(err);
-		});
-
+		});		
 		
 	}
 
@@ -45,7 +48,7 @@ class App extends React.Component {
 	    <div className="App">
 	      	<Navbar />
 	      	<MainSplash />
-	      	<About />
+	      	<About madskills={this.state.home_skills} />
 	    </div>
 		);
 	}
