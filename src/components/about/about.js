@@ -53,21 +53,33 @@ export default class About extends React.Component {
 							<p>Project Management</p>
 							<hr className="hr-green" />
 							<ul className="no-pad-mar no-ls">
-								
+								{
+									this.props.madskills.proj_mana.map((el, idx) => {
+										return <li key={idx}>{el}</li>
+									})
+								}
 							</ul>
 						</div>
 						<div className="slot md">
 							<p>Web Development</p>
 							<hr className="hr-green" /> 					
 							<ul className="no-pad-mar no-ls">
-								
+								{
+									this.props.madskills.web_dev.map((el, idx) => {
+										return <li key={idx}>{el}</li>
+									})
+								}
 							</ul>					
 						</div>
 						<div className="slot rt">				
 							<p>Web Design/Art</p>
 							<hr className="hr-green" /> 
 							<ul className="no-pad-mar no-ls">
-													
+								{
+									this.props.madskills.web_design_art.map((el, idx) => {
+										return <li key={idx}>{el}</li>
+									})
+								}					
 							</ul>
 						</div>
 					</div>

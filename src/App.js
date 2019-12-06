@@ -5,6 +5,7 @@ import './App.css';
 import Navbar from './components/nav/nav.js'; 
 import MainSplash from './components/splasher/main-splash.js'; 
 import About from './components/about/about.js'; 
+import Loader from './components/loader/loader.js'; 
 
 class App extends React.Component {
 
@@ -41,7 +42,9 @@ class App extends React.Component {
 	      	<Navbar />
 	      	<MainSplash />
 	      	{
-	      		this.state.home_skills != null ? <About madskills={this.state.home_skills} /> : <h1>Loading...</h1>
+	      		this.state.home_skills != null ? 
+	      		<About madskills={this.state.home_skills} /> : 
+	      		<Loader />
 	      	}
 	    </div>
 		);
