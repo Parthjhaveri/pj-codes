@@ -15,14 +15,6 @@ class App extends React.Component {
 			home_skills: null
 		}
 
-		this.sendSkillProps = this.sendSkillProps.bind(this);
-	}
-
-	sendSkillProps(delta) {
-		return (previousState, currentProps) => {
-			console.log(delta);
-			// return {...previousState, home_skills: delta}
-		}
 	}
 
 	componentDidMount() {	
@@ -33,7 +25,7 @@ class App extends React.Component {
 
 		skillset_ref.onSnapshot((doc) => {
 		    if (doc.exists) {
-		        this.setState(this.sendSkillProps(doc.data()));
+		        this.setState({home_skills: doc.data()});
 		    } 
 
 		    else {		        
@@ -48,7 +40,9 @@ class App extends React.Component {
 	    <div className="App">
 	      	<Navbar />
 	      	<MainSplash />
-	      	<About madskills={this.state.home_skills} />
+	      	{
+	      		this.state.home_skills != null ? <About madskills={this.state.home_skills} /> : <h1>Loading...</h1>
+	      	}
 	    </div>
 		);
 	}

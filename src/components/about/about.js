@@ -5,15 +5,11 @@ export default class About extends React.Component {
 	constructor (props) {
 		super(props);
 
-		this.state = {
-			proj_man: [],
-			web_desi: [],
-			web_devl: []
-		}
+		this.state = {}
 	}
 
-	componentDidMount() {
-		console.log(this.props.madskills);
+	componentDidMount() {		
+		console.log(this.props.madskills);		
 	}
 
 	render() {
