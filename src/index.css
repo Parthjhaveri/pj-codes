@@ -189,17 +189,21 @@ nav ul {
 	flex-direction: row;
 }
 
+nav ul.links {
+	align-items: center;
+}
+
 nav ul.links:before {
 	content: '[';
 	position: relative;
-	top: -6px;
+	/*top: -6px;*/
 	color: #1abc9c;
 }
 
 nav ul.links:after {
 	content: ']';
 	position: relative;
-	top: -6px;
+	/*top: -6px;*/
 	color: #1abc9c;
 }
 
@@ -257,6 +261,8 @@ nav .content-wrap.mobile svg {
 
 #home-about {
 	background-color: #fff;
+	opacity: 1;
+	transition: 1s;
 }
 
 #home-about img {

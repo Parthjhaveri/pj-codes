@@ -6,15 +6,17 @@ export default class About extends React.Component {
 		super(props);
 
 		this.state = {}
+
+		this.home_about_ref = React.createRef();
 	}
 
 	componentDidMount() {		
-		console.log(this.props.madskills);		
+		console.log('HOME ABOUT COMPONENT ', this.home_about_ref.current);
 	}
 
 	render() {
 		return (
-			<section className="sec-block text-justify" id="home-about">
+			<section className="sec-block text-justify" id="home-about" ref={this.home_about_ref}>
 				<div className="container py-5">
 					<h1 className="txt-purp">About</h1>
 					<div className="row">

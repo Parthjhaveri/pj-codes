@@ -13,8 +13,11 @@ class App extends React.Component {
 		super(props);
 
 		this.state = {
-			home_skills: null
+			home_skills: null,
+			main_splash_ref: null
 		}
+
+		this.getChildData = this.getChildData.bind(this);
 
 	}
 
@@ -32,15 +35,22 @@ class App extends React.Component {
 		    else {		        
 		        console.log("No such document!");
 		    }
-		});		
-		
+		});			
+	}
+
+	getChildData(refval) {
+		this.setState({ main_splash_ref: refval });
 	}
 
 	render() {
 		return (
 	    <div className="App">
-	      	<Navbar />
-	      	<MainSplash />
+	      	{
+	      		this.state.main_splash_ref != null ? 
+	      		<Navbar mainsplashref={this.state.main_splash_ref} /> :
+	      		null
+	      	}
+	      	<MainSplash divref={this.getChildData} />
 	      	{
 	      		this.state.home_skills != null ? 
 	      		<About madskills={this.state.home_skills} /> : 

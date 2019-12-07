@@ -5,20 +5,25 @@ export default class MainSplash extends React.Component {
 	constructor (props) {
 		super(props);
 
-		this.state = {
-			
-		}
+		this.state = {}
+
+		this.home_splash_ref = React.createRef();
+	}
+
+	componentDidMount() {
+		// SEND REF DATA TO PARENT COMPONENT (App.js)
+		this.props.divref(this.home_splash_ref.current);
 	}
 
 	render() {
 		return (
-			<section className="sec-block p-5" id="home-splash">
+			<section className="sec-block p-5" id="home-splash" ref={this.home_splash_ref}>
 				<div className="content-wrap">
 					<img src={logo} alt="PJ Codes logo" />
 					<p className="no-pad-mar mt-3">
 						New York based Front-End Web Developer
-						<br/>
-						<br/>
+						<br />
+						<br />
 						Dedicated to the craft of engineering seamless, user-friendly and
 						accessible web experiences
 					</p>
