@@ -9,6 +9,7 @@ import Loader from './components/loader/loader.js';
 import Work from './components/work/work.js'; 
 import FeaturedExercise from './components/featuredexc/featured_exc.js'; 
 import FeaturedSocial from './components/social/featured_social.js'; 
+import Contact from './components/contact/contact.js'; 
 
 class App extends React.Component {
 
@@ -65,6 +66,7 @@ class App extends React.Component {
 	      	<Work />
 	      	<FeaturedExercise />
 	      	<FeaturedSocial />
+	      	<Contact />
 	    </div>
 		);
 	}

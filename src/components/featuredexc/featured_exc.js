@@ -14,28 +14,26 @@ export default class FeaturedExercise extends React.Component {
 
 	componentDidMount() {
 		// HOME FEATURED QUIZ
-			var feat_ex_submit = this.submit_ref.current;
+		var feat_ex_submit = this.submit_ref.current;
 
-			feat_ex_submit.addEventListener('click', (event) => {
-				event.preventDefault();
-				let selected_answer = document.querySelector('input[name="choice"]:checked').value;
-				let confirmation = this.confirmation_ref.current;
-				let confirmation_text = this.confirmation_p_ref.current;
-				
-				if (selected_answer === 'choice-b') {
-					confirmation_text.innerHTML = 'Correct Answer!'
-
-					confirmation.style.display = 'flex';
-					confirmation.style.backgroundColor = '#1bac9c';
-					confirmation.style.transition = '0.4s';
-				} else {
-					confirmation_text.innerHTML = 'Wrong Answer!'
-
-					confirmation.style.display = 'flex';
-					confirmation.style.backgroundColor = '#e83e8c';
-					confirmation.style.transition = '0.4s';
-				}
-			});
+		feat_ex_submit.addEventListener('click', (event) => {
+			event.preventDefault();
+			let selected_answer = document.querySelector('input[name="choice"]:checked').value;
+			let confirmation = this.confirmation_ref.current;
+			let confirmation_text = this.confirmation_p_ref.current;
+			
+			if (selected_answer === 'choice-b') {
+				confirmation_text.innerHTML = 'Correct Answer!'
+				confirmation.style.display = 'flex';
+				confirmation.style.backgroundColor = '#1bac9c';
+				confirmation.style.transition = '0.4s';
+			} else {
+				confirmation_text.innerHTML = 'Wrong Answer!'
+				confirmation.style.display = 'flex';
+				confirmation.style.backgroundColor = '#e83e8c';
+				confirmation.style.transition = '0.4s';
+			}
+		});
 	}
 
 	render() {
