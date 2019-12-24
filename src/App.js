@@ -10,6 +10,7 @@ import Work from './components/work/work.js';
 import FeaturedExercise from './components/featuredexc/featured_exc.js'; 
 import FeaturedSocial from './components/social/featured_social.js'; 
 import Contact from './components/contact/contact.js'; 
+import Footer from './components/footer/footer.js'; 
 
 class App extends React.Component {
 
@@ -67,6 +68,7 @@ class App extends React.Component {
 	      	<FeaturedExercise />
 	      	<FeaturedSocial />
 	      	<Contact />
+	      	<Footer />
 	    </div>
 		);
 	}
