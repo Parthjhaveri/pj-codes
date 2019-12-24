@@ -6,6 +6,8 @@ import Navbar from './components/nav/nav.js';
 import MainSplash from './components/splasher/main-splash.js'; 
 import About from './components/about/about.js'; 
 import Loader from './components/loader/loader.js'; 
+import Work from './components/work/work.js'; 
+import FeaturedExercise from './components/featuredexc/featured_exc.js'; 
 
 class App extends React.Component {
 
@@ -27,6 +29,7 @@ class App extends React.Component {
 		const db = firebase.firestore();
 		var skillset_ref = db.collection('skillset').doc('B5V0RPKajYlvhbSagIEY');
 
+		// LISTEN FOR UPDATES
 		skillset_ref.onSnapshot((doc) => {
 		    if (doc.exists) {
 		        this.setState({home_skills: doc.data()});
@@ -45,17 +48,21 @@ class App extends React.Component {
 	render() {
 		return (
 	    <div className="App">
-	      	{
+	      	{	
+	      		// RENDER ONLY IF PROPS EXIST
 	      		this.state.main_splash_ref != null ? 
 	      		<Navbar mainsplashref={this.state.main_splash_ref} /> :
 	      		null
 	      	}
 	      	<MainSplash divref={this.getChildData} />
 	      	{
+	      		// RENDER ONLY IF PROPS EXIST
 	      		this.state.home_skills != null ? 
 	      		<About madskills={this.state.home_skills} /> : 
 	      		<Loader />
 	      	}
+	      	<Work />
+	      	<FeaturedExercise />
 	    </div>
 		);
 	}

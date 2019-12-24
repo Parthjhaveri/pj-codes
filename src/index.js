@@ -5,6 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase';
 
+// REDUX IMPORTS
+// import { Provider } from 'react-redux';
+// import store from './store';
+
 // FIREBASE CONFIG
 var firebaseConfig = {
 	apiKey: "AIzaSyBpxiwnQ7pHVk-9Gac_MTaFHjRbXvXIp-Q",
@@ -21,7 +25,10 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+	<App />, 
+	document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

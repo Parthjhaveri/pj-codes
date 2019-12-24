@@ -10,10 +10,6 @@ export default class About extends React.Component {
 		this.home_about_ref = React.createRef();
 	}
 
-	componentDidMount() {		
-		console.log('HOME ABOUT COMPONENT ', this.home_about_ref.current);
-	}
-
 	render() {
 		return (
 			<section className="sec-block text-justify" id="home-about" ref={this.home_about_ref}>

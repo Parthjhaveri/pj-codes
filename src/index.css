@@ -94,6 +94,10 @@ h1:before {
 	color: #fff;
 }
 
+.txt-grey {
+	color: #666;
+}
+
 .hr-green {
 	width: 100%;
 	height: auto;
@@ -366,13 +370,17 @@ nav .content-wrap.mobile svg {
 	transition: 0.4s;
 }
 
+#home-work h4 code {
+	color: #1abc9c;
+}
+
 /* HOME SIDE PROJECTS */
 #home-side-projects {
 	background-color: #303045;
 }
 
 #home-side-projects h4 code {
-	color: #1abc9c;
+	color: #1abc9c !important;
 }
 
 #home-side-projects img {
@@ -388,6 +396,7 @@ nav .content-wrap.mobile svg {
 	padding: 20px;
 	box-sizing: border-box;
 	box-shadow: 0px 0px 25px #ddd;
+	font-size: 12px;
 }
 
 #home-code form#feat-ex {
