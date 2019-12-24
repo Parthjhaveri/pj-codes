@@ -98,6 +98,10 @@ h1:before {
 	color: #666;
 }
 
+.txt-green {
+	color: #1abc9c;
+}
+
 .hr-green {
 	width: 100%;
 	height: auto;
