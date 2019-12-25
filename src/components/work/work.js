@@ -20,12 +20,12 @@ export default class Work extends React.Component {
 			<section className="sec-block text-justify text-white" id="home-side-projects">
 				<div className="container pt-5">					
 					<h1>Featured side Projects</h1>
-						<h4><code>0: let project = 'Earthquake Alert';<span className='txt-grey'> // My personal favorite</span></code></h4>
+						<h4><code><span className='txt-pink'>0:</span> let project = 'Earthquake Alert';<span className='txt-grey'> // My personal favorite</span></code></h4>
 						<div className="row">
 							<div className="col-12 col-lg-6">
 								<img src={eqalert_img} alt="Earthquake Alert pic" />	
 							</div>
-							<div className="col-12 col-lg-6">
+							<div className="col-12 col-lg-6 center-mobile">
 								<p>
 									An app that uses the USGS REST API to pull in live Earthquake data 
 									from around the world into a clickable table feed, which changes
@@ -45,12 +45,12 @@ export default class Work extends React.Component {
 							</div>
 						</div>
 
-						<h4 className="mt-5"><code>1: let project = 'Planet Watch';</code></h4>
+						<h4 className="mt-5"><code><span className='txt-pink'>1:</span> let project = 'Planet Watch';</code></h4>
 						<div className="row">
 							<div className="col-12 col-lg-6">
 								<img src={plwatch_img} alt="Panet Watch pic" />	
 							</div>
-							<div className="col-12 col-lg-6">
+							<div className="col-12 col-lg-6 center-mobile">
 								<p>
 									Built in React, this app that provides a consolidated narrative on several Global and Astronomical issues.
 									<br />

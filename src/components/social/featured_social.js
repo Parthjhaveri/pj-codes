@@ -18,10 +18,10 @@ export default class FeaturedSocial extends React.Component {
 					<h1>Social media</h1>
 					<div className="row mt-3">
 						<div className="col-12 col-lg-3">
-							<p className="text-left">
+							<p className="text-left center-mobile">
 								Join me in my journey where I share my knowledge, skills and more importantly, learn from other developers and gain insight from their stories.
 							</p>
-							<h5><span className='txt-green'>@</span>pjcodes<code><span className='txt-grey'> // Instagram</span></code></h5>
+							<h5 className='center-mobile'><span className='txt-green'>@</span>pjcodes<code><span className='txt-grey'> // Instagram</span></code></h5>
 							<p><i className="fas fa-chevron-right"></i> Daily posts</p>
 							<p><i className="fas fa-chevron-right"></i> Pop quizes</p>
 							<p><i className="fas fa-chevron-right"></i> Challenges</p>

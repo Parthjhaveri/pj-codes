@@ -102,6 +102,14 @@ h1:before {
 	color: #1abc9c;
 }
 
+.txt-pink {
+	color: #e83e8c;
+}
+
+.center-mobile {
+	text-align: left !important;
+}
+
 .hr-green {
 	width: 100%;
 	height: auto;
@@ -589,6 +597,10 @@ footer img {
 
 	aside#email-sticky {
 		display: none;
+	}
+
+	.center-mobile {
+		text-align: center !important;
 	}
 
 	#home-about img {

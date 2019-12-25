@@ -93,7 +93,7 @@ export default class FeaturedExercise extends React.Component {
 									<label><code><p className='my-0'>TypeError</p></code></label>
 								</span>
 
-								<button className="btn-std mt-4" ref={this.submit_ref}>
+								<button className="btn-std mt-4 center-mobile" ref={this.submit_ref}>
 									<code>Submit</code>
 								</button>
 							</form>

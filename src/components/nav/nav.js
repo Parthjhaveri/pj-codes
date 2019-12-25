@@ -50,6 +50,8 @@ export default class Navbar extends React.Component {
 						<li>Exercises</li>
 						<li>Social</li>
 						<li>Contact</li>
+						<li>Sign In</li>
+						<li>Sign Out</li>
 					</ul>
 				</div>
 				<div className="content-wrap mobile">
