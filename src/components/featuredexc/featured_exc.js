@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Prism } from 'react-syntax-highlighter';
 
 export default class FeaturedExercise extends React.Component {
 	constructor (props) {
@@ -43,8 +47,7 @@ export default class FeaturedExercise extends React.Component {
 					<h1>Featured Exercise</h1>
 					<div className="row">
 						<div className="col-12 col-lg-6">
-		<pre>
-		<code className="language-javascript">
+<SyntaxHighlighter language="javascript" style={docco}>		
 {`
 	function shows() {
 		
@@ -64,9 +67,10 @@ export default class FeaturedExercise extends React.Component {
 	}
 
 	shows();
+	
 `}
-		</code>
-		</pre>
+</SyntaxHighlighter>
+		
 						</div>
 						<div className="col-12 col-lg-6">
 							

@@ -445,6 +445,7 @@ nav .content-wrap.mobile svg {
 	width: 45%;
 	border-color: #1abc9c;
 	display: inline-block;
+	text-align: center !important;
 }
 
 #home-code form#feat-ex button.btn-std code {	
