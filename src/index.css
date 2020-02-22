@@ -25,7 +25,11 @@ body {
 	font-size: 22px;
 }
 
-p, li, a {
+*:focus {
+	outline: 1px dotted #1abc9c;
+}
+
+p, li, a {	
 	font-size: .95rem;
 }
 
@@ -122,6 +126,10 @@ h1:before {
 	color: #e83e8c;
 }
 
+.txt-light {
+	font-weight: 100;
+}
+
 .center-mobile {
 	text-align: left !important;
 }
@@ -151,11 +159,67 @@ h1:before {
 	color: #000;
 }
 
+.content-wrap form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #f7f7f7;
+	padding: 50px 0px;
+	width: 50%;
+	border-radius: 5px;
+	box-shadow: 0px 0px 25px #bfbfbf;
+}
+
+.content-wrap form span {
+	width: 80%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.content-wrap form span label {
+	font-weight: 700;
+	letter-spacing: 1px;
+	font-size: 0.70rem;
+	text-transform: uppercase;
+}
+
+.content-wrap form span input {
+	font-size: 0.90rem;
+	padding: 5px 0px;
+	border: none;
+	border-bottom: 2px solid #303045;
+	font-style: italic;
+	margin-bottom: 20px;
+	background-color: #f7f7f7;
+}
+
+.content-wrap form span textarea {
+	font-size: 0.90rem;
+	padding: 5px 0px;
+	min-height: 80px;
+	border: none;
+	border-bottom: 2px solid #303045;
+	font-style: italic;
+	background-color: #f7f7f7;
+}
+
+.content-wrap form button {
+	border-color: #000;
+	padding-left: 50px; 
+	padding-right: 50px; 
+}
+
+.content-wrap form button code {
+	color: #000;
+}
+
 /* GENERAL */
 aside#email-sticky {
 	position: fixed;
 	bottom: 0;
-	right: 25px;
+	right: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -203,8 +267,9 @@ nav {
 
 nav img {
 	width: 0%;
-	display: none;
 	transition: 0.4s;
+	cursor: pointer;
+	display: none;
 }
 
 nav .content-wrap {
@@ -228,14 +293,12 @@ nav ul.links {
 nav ul.links:before {
 	content: '[';
 	position: relative;
-	/*top: -6px;*/
 	color: #1abc9c;
 }
 
 nav ul.links:after {
 	content: ']';
 	position: relative;
-	/*top: -6px;*/
 	color: #1abc9c;
 }
 
@@ -528,18 +591,33 @@ nav .content-wrap.mobile svg {
 	justify-content: center;
 }
 
-#home-contact .content-wrap form {
+/* LOGIN PAGE STYLES */
+#login-page {
+	background-color: #303045;
+	height: auto;
+	text-align: left;
+}
+
+#login-page .content-wrap {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 80px 0px 60px 0px;
+}
+
+#login-page .content-wrap form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: #f7f7f7;
+	background-color: #1a1a1a;
 	padding: 50px 0px;
 	width: 50%;
 	border-radius: 5px;
-	box-shadow: 0px 0px 25px #bfbfbf;
+	box-shadow: 0px 0px 25px #1a1a1a;
+	color: #fff;
 }
 
-#home-contact .content-wrap form span {
+#login-page .content-wrap form span {
 	width: 80%;
 	height: auto;
 	display: flex;
@@ -547,42 +625,45 @@ nav .content-wrap.mobile svg {
 	margin-bottom: 20px;
 }
 
-#home-contact .content-wrap form span label {
+#login-page .content-wrap form span label {
 	font-weight: 700;
 	letter-spacing: 1px;
-	font-size: 0.70rem;
+	font-size: 1rem;
 	text-transform: uppercase;
 }
 
-#home-contact .content-wrap form span input {
+#login-page .content-wrap form span input {
 	font-size: 0.90rem;
 	padding: 5px 0px;
 	border: none;
-	border-bottom: 2px solid #303045;
+	border-bottom: 2px solid #fff;
 	font-style: italic;
 	margin-bottom: 20px;
-	background-color: #f7f7f7;
+	background-color: transparent;
+	color: #fff;
 }
 
-#home-contact .content-wrap form span textarea {
+#login-page .content-wrap form span textarea {
 	font-size: 0.90rem;
 	padding: 5px 0px;
 	min-height: 80px;
 	border: none;
-	border-bottom: 2px solid #303045;
+	border-bottom: 2px solid #fff;
 	font-style: italic;
-	background-color: #f7f7f7;
+	background-color: transparent;
 }
 
-#home-contact .content-wrap form button {
-	border-color: #000;
+#login-page .content-wrap form button {
+	border-color: #fff;
 	padding-left: 50px; 
 	padding-right: 50px; 
 }
 
-#home-contact .content-wrap form button code {
-	color: #000;
+#login-page .content-wrap form button code {
+	color: #fff;
 }
+
+/* FOOTER STYLES */
 
 footer {
 	background-color: #1a1a1a;

@@ -19,7 +19,11 @@ class Navbar extends React.Component {
 		this.navlinks_ref = React.createRef();
 	}
 
-	componentDidMount() {}
+	componentDidMount() {
+		this.logo_ref.current.addEventListener('click', () => {
+			window.location.href = '/';
+		});
+	}
 
 	componentDidUpdate() {		
 		var site_nav = this.nav_ref.current;
@@ -41,7 +45,9 @@ class Navbar extends React.Component {
 		return (
 			<nav className="p-4" ref={this.nav_ref}>
 				<div className="content-wrap web">
+					
 					<img src={white_logo} alt="PJ Codes logo" ref={this.logo_ref} />
+					
 					<ul className="no-pad-mar no-ls social">
 						<li><i className="fab fa-facebook-f"></i></li>
 						<li><i className="fab fa-instagram"></i></li>
