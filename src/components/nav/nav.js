@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
 import white_logo from '../../images/logo-white.png';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import { connect } from 'react-redux';
 
-export default class Navbar extends React.Component {
+class Navbar extends React.Component {
 	constructor (props) {
 		super(props);
 
@@ -9,26 +16,23 @@ export default class Navbar extends React.Component {
 
 		this.nav_ref = React.createRef();
 		this.logo_ref = React.createRef();
+		this.navlinks_ref = React.createRef();
 	}
 
-	componentDidMount() {
+	componentDidMount() {}
 
+	componentDidUpdate() {		
 		var site_nav = this.nav_ref.current;
 		var site_nav_img = this.logo_ref.current;
-		var splash_div = this.props.mainsplashref;
+		var splash_div = this.props.main_splash_ref;
 		
 		window.onscroll = function() {
-			if (window.pageYOffset > (splash_div.clientHeight - site_nav.clientHeight)) {
-				site_nav.style.backgroundColor  = '#303045';
-				site_nav_img.style.width 		= '9%';
-				site_nav_img.style.height 		= 'auto';
-				site_nav_img.style.display 		= 'inline-block';
-				site_nav.style.transition 		= '0.5s';
+			if (window.pageYOffset > (splash_div.clientHeight - site_nav.clientHeight)) {				
+				site_nav.classList.add('nav-scroll-change');		
+				site_nav_img.classList.add('nav-img-scroll-change');		
 			} else {
-				site_nav.style.backgroundColor  = 'transparent';
-				site_nav_img.style.width 		= '0%';
-				site_nav_img.style.display 		= 'none';
-				site_nav.style.transition 		= '0.5s';
+				site_nav.classList.remove('nav-scroll-change');		
+				site_nav_img.classList.remove('nav-img-scroll-change');
 			}
 		}
 	}
@@ -43,16 +47,18 @@ export default class Navbar extends React.Component {
 						<li><i className="fab fa-instagram"></i></li>
 						<li><i className="fab fa-github"></i></li>
 						<li><i className="fab fa-youtube"></i></li>
-					</ul>
-					<ul className="no-pad-mar no-ls links">
+					</ul>					
+					<ul className="no-pad-mar no-ls links" ref={this.navlinks_ref}>
 						<li>About</li>
 						<li>Work</li>
 						<li>Exercises</li>
 						<li>Social</li>
 						<li>Contact</li>
-						<li>Sign In</li>
-						<li>Sign Out</li>
-					</ul>
+						<li className='signin-status' data-status='signed_in'>
+							<Link to="/login-page">Sign In</Link>
+						</li>
+						<li className='signin-status' data-status='signed_out'>Sign Out</li>
+					</ul>					
 				</div>
 				<div className="content-wrap mobile">
 					<i className="fas fa-bars"></i>
@@ -61,3 +67,11 @@ export default class Navbar extends React.Component {
 		)
 	}
 }
+
+let mapStateToProps = (state) => {	
+	return {
+		main_splash_ref: state.dom_elements.dom_data
+	}
+}
+
+export default connect(mapStateToProps, null)(Navbar);

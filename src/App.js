@@ -2,74 +2,30 @@ import React from 'react';
 import firebase from 'firebase';
 
 import './App.css';
-import Navbar from './components/nav/nav.js'; 
-import MainSplash from './components/splasher/main-splash.js'; 
-import About from './components/about/about.js'; 
-import Loader from './components/loader/loader.js'; 
-import Work from './components/work/work.js'; 
-import FeaturedExercise from './components/featuredexc/featured_exc.js'; 
-import FeaturedSocial from './components/social/featured_social.js'; 
-import Contact from './components/contact/contact.js'; 
+import Navbar from './components/nav/nav.js';
+import Mainpage from './components/main/main.js';
 import Footer from './components/footer/footer.js'; 
+import Router from './Router.js'; 
+import { Route, Switch } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends React.Component {
 
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			home_skills: null,
-			main_splash_ref: null
-		}
-
-		this.getChildData = this.getChildData.bind(this);
-
+		this.state = {}
 	}
 
-	componentDidMount() {	
-
-		// GET LIST HOME SKILLSET FROM FIREBASE
-		const db = firebase.firestore();
-		var skillset_ref = db.collection('skillset').doc('B5V0RPKajYlvhbSagIEY');
-
-		// LISTEN FOR UPDATES
-		skillset_ref.onSnapshot((doc) => {
-		    if (doc.exists) {
-		        this.setState({home_skills: doc.data()});
-		    } 
-
-		    else {		        
-		        console.log("No such document!");
-		    }
-		});			
-	}
-
-	getChildData(refval) {
-		this.setState({ main_splash_ref: refval });
-	}
+	componentDidMount() {}
 
 	render() {
 		return (
-	    <div className="App">
-	      	{	
-	      		// RENDER ONLY IF PROPS EXIST
-	      		this.state.main_splash_ref != null ? 
-	      		<Navbar mainsplashref={this.state.main_splash_ref} /> :
-	      		null
-	      	}
-	      	<MainSplash divref={this.getChildData} />
-	      	{
-	      		// RENDER ONLY IF PROPS EXIST
-	      		this.state.home_skills != null ? 
-	      		<About madskills={this.state.home_skills} /> : 
-	      		<Loader />
-	      	}
-	      	<Work />
-	      	<FeaturedExercise />
-	      	<FeaturedSocial />
-	      	<Contact />
-	      	<Footer />
-	    </div>
+		    <div className="App">
+	  			<Navbar />
+	      		<Router />	     	
+		      	<Footer />
+		    </div>
 		);
 	}
 }

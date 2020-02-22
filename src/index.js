@@ -4,10 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import * as firebase from 'firebase';
+import {BrowserRouter} from "react-router-dom";
+import Router from './Router.js';
 
 // REDUX IMPORTS
-// import { Provider } from 'react-redux';
-// import store from './store';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import root_reducer from './redux/reducers/root_reducer.js';
+
+const store = createStore(root_reducer);
 
 // FIREBASE CONFIG
 var firebaseConfig = {
@@ -26,7 +31,11 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 ReactDOM.render(
-	<App />, 
+	<BrowserRouter>
+		<Provider store={store}>			
+			<App />
+		</Provider>
+	</BrowserRouter>, 
 	document.getElementById('root')
 );
 

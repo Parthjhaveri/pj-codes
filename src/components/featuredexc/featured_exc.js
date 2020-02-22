@@ -28,14 +28,12 @@ export default class FeaturedExercise extends React.Component {
 			
 			if (selected_answer === 'choice-b') {
 				confirmation_text.innerHTML = 'Correct Answer!'
-				confirmation.style.display = 'flex';
-				confirmation.style.backgroundColor = '#1bac9c';
-				confirmation.style.transition = '0.4s';
+				confirmation.classList.add('ans-correct');				
+				confirmation.classList.remove('ans-incorrect');
 			} else {
 				confirmation_text.innerHTML = 'Wrong Answer!'
-				confirmation.style.display = 'flex';
-				confirmation.style.backgroundColor = '#e83e8c';
-				confirmation.style.transition = '0.4s';
+				confirmation.classList.add('ans-incorrect');
+				confirmation.classList.remove('ans-correct');				
 			}
 		});
 	}
@@ -67,7 +65,7 @@ export default class FeaturedExercise extends React.Component {
 	}
 
 	shows();
-	
+
 `}
 </SyntaxHighlighter>
 		

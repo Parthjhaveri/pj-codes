@@ -29,6 +29,10 @@ p, li, a {
 	font-size: .95rem;
 }
 
+a:visited {
+	color: inherit;
+}
+
 a:hover {
 	text-decoration: none;
 }
@@ -65,6 +69,18 @@ h1:before {
 	color: #1abc9c;
 	transition: 0.4s;
 }
+
+.ans-correct {
+	display: flex !important;
+	background-color: #1bac9c;
+	transition: 0.4s !important;
+}
+
+.ans-incorrect {
+	display: flex !important;
+	background-color: #e83e8c;
+	transition: 0.4s !important;
+}				
 
 .no-pad-mar {
 	margin: 0px;
@@ -240,6 +256,17 @@ nav .content-wrap.mobile {
 
 nav .content-wrap.mobile svg {
 	color: #fff;
+}
+
+.nav-scroll-change {
+	background-color: #303045;
+	transition: 0.5s;
+}
+
+.nav-img-scroll-change {
+	width: 9%;
+	height: auto;
+	display: inline-block;
 }
 
 #home-splash {

@@ -18,7 +18,7 @@ export default class Work extends React.Component {
 	render() {
 		return (
 			<section className="sec-block text-justify text-white" id="home-side-projects">
-				<div className="container pt-5">					
+				<div className="container py-5">					
 					<h1>Featured side Projects</h1>
 						<h4><code><span className='txt-pink'>0:</span> let project = 'Earthquake Alert';<span className='txt-grey'> // My personal favorite</span></code></h4>
 						<div className="row">

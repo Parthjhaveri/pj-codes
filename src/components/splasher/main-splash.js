@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import logo from '../../images/logo-white.png';
 
-export default class MainSplash extends React.Component {
+// REDUX
+import { connect } from 'react-redux';
+import { dom_element } from '../../redux/actions/dom_elements.js';
+
+class MainSplash extends React.Component {
 	constructor (props) {
 		super(props);
 
@@ -10,9 +14,8 @@ export default class MainSplash extends React.Component {
 		this.home_splash_ref = React.createRef();
 	}
 
-	componentDidMount() {
-		// SEND REF DATA TO PARENT COMPONENT (App.js)
-		this.props.divref(this.home_splash_ref.current);
+	componentDidMount() {		
+		this.props.splash_reference(this.home_splash_ref.current);
 	}
 
 	render() {
@@ -38,3 +41,14 @@ export default class MainSplash extends React.Component {
 		)
 	}
 }
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		splash_reference: (data) => {
+			dispatch(dom_element(data));
+		}
+	}
+}
+
+
+export default connect( null, mapDispatchToProps)(MainSplash);
