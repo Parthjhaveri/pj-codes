@@ -55,13 +55,14 @@ class Navbar extends React.Component {
 						<li><i className="fab fa-youtube"></i></li>
 					</ul>					
 					<ul className="no-pad-mar no-ls links" ref={this.navlinks_ref}>
+						<li><Link to="/">Home</Link></li>
 						<li>About</li>
 						<li>Work</li>
 						<li>Exercises</li>
 						<li>Social</li>
 						<li>Contact</li>
 						<li className='signin-status' data-status='signed_in'>
-							<Link to="/login-page">Sign In</Link>
+							<Link to="/login">Sign In</Link>
 						</li>
 						<li className='signin-status' data-status='signed_out'>Sign Out</li>
 					</ul>					

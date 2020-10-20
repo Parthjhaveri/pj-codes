@@ -4,10 +4,10 @@ import firebase from 'firebase';
 import './App.css';
 import Navbar from './components/nav/nav.js';
 import Mainpage from './components/main/main.js';
+import Login from './components/auth/login.js';
 import Footer from './components/footer/footer.js'; 
-import Router from './Router.js'; 
-import { Route, Switch } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import RouterComponent from './Router.js'; 
+import { Switch } from 'react-router';
 
 class App extends React.Component {
 
@@ -23,7 +23,7 @@ class App extends React.Component {
 		return (
 		    <div className="App">
 	  			<Navbar />
-	      		<Router />	     	
+	      		<RouterComponent/>
 		      	<Footer />
 		    </div>
 		);

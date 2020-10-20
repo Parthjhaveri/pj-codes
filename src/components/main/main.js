@@ -18,7 +18,10 @@ class Mainpage extends React.Component {
 
 		this.state = {
 			home_skills: null,
-			main_splash_ref: null
+			main_splash_ref: null,
+			name: '',
+			email: '',
+			message: '',
 		}
 
 		this.getChildData = this.getChildData.bind(this);

@@ -1,35 +1,41 @@
-import React, { Component } from 'react';
+import React, { Component, useState, useEffect } from 'react';
+import Field from '../__global/form_elements/field';
 
-export default class Contact extends React.Component {
-	constructor (props) {
-		super(props);
+const Contact = () => {
 
-		this.state = {}
+	const fields = [
+		{label: 'Full Name', name: 'name', elementName: 'input', 'type': 'text', placeholder: 'Arnold Saucemaker'},
+		{label: 'Email', name: 'email', elementName: 'input', 'type': 'email', placeholder: 'Arnold@Saucemaker.com'},
+		{label: 'Message', name: 'message', elementName: 'textarea', 'type': 'text', placeholder: 'Get to the chopper...'},
+	];
 
+	const [form_state, set_form_state] = useState({
+		name: '',
+		email: '',
+		message: ''
+	});
+
+	const handle_submit = (e) => {
+		e.preventDefault();
+		console.log('Form submitted!', form_state);
 	}
 
-	componentDidMount() {}
-
-	render() {
-		return (
+	return (
 			<section className="sec-block text-left" id="home-contact">
 				<div className="container py-5">
 					<h1>Contact</h1>
 
 					<div className="content-wrap">
-						<form>
-							<span>
-								<label>Full Name<sup>*</sup></label>
-								<input type="text" name="fullname" placeholder="Arnold Saucemaker..." />
-							</span>
-							<span>
-								<label>Email Address<sup>*</sup></label>
-								<input type="email" name="email" placeholder="Arnold@Saucemaker.com" />
-							</span>
-							<span>
-								<label>Message<sup>*</sup></label>
-								<textarea placeholder="Get to the chopper..."></textarea>
-							</span>
+						<form onSubmit={handle_submit}>
+							{
+								fields.map((el, idx) => {
+									return <Field 
+										{...el} 
+										key={idx} 
+										value={form_state[el.name]} 
+										onChange={e => set_form_state({...form_state, [el.name]: e.target.value})} />
+								})
+							}
 							<button className="btn-std mt-4">
 								<code>Send Message</code>
 							</button>
@@ -39,5 +45,6 @@ export default class Contact extends React.Component {
 				</div>
 			</section>
 		)
-	}
 }
+
+export default Contact;

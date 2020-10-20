@@ -622,7 +622,7 @@ nav .content-wrap.mobile svg {
 	height: auto;
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 20px;
+	margin-bottom: 0px !important;
 }
 
 #login-page .content-wrap form span label {
@@ -655,8 +655,7 @@ nav .content-wrap.mobile svg {
 
 #login-page .content-wrap form button {
 	border-color: #fff;
-	padding-left: 50px; 
-	padding-right: 50px; 
+	width: 80%; 
 }
 
 #login-page .content-wrap form button code {
