@@ -170,8 +170,12 @@ h1:before {
 	box-shadow: 0px 0px 25px #bfbfbf;
 }
 
-.content-wrap form span {
+.content-wrap form aside {
 	width: 80%;
+}
+
+.content-wrap form span {
+	width: 100%;
 	height: auto;
 	display: flex;
 	flex-direction: column;
