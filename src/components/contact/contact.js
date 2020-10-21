@@ -1,8 +1,9 @@
 import React, { Component, useState, useEffect } from 'react';
 import InputField from '../__global/form_elements/field';
 
-// FORMIK
+// FORMIK & YUP
 import { withFormik, useFormik, Formik, Form, Field, ErrorMessage } from 'formik';
+import * as yup from 'yup';
 
 const Contact = () => {
 
@@ -12,26 +13,6 @@ const Contact = () => {
 		{label: 'Message', id: 'message', name: 'message', elementName: 'textarea', 'type': 'text', placeholder: 'Get to the chopper...'},
 	];
 
-	const validate = values => {
-		const errors = {};
-
-		if (!values.name) {
-			errors.name = 'Name Required!';
-		}
-
-		if (!values.email) {
-		    errors.email = 'Email Required!';
-	   	} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-		    errors.email = 'Invalid email address';
-	    }
-
-		if (!values.message) {
-			errors.message = 'Message Required!';
-		}
-
-		return errors;
-	}
-
 	// FORMIK INITIALIZATION
 	const formik = useFormik({
 		initialValues: {
@@ -39,9 +20,13 @@ const Contact = () => {
 			email: '',
 			message: '',
 		},
-		validate,
+		validationSchema: yup.object().shape({
+			name: yup.string().required('Name required!'),
+	  		email: yup.string().email('Make sure email is valid!').required('Email required!'),
+	  		message: yup.string().min(100, 'Please send a more detailed message!').required('Message required!')
+		}),
 		onSubmit: values => {
-			console.log('VALUES ', values);
+			console.log('VALUES- ', values);
 		}
 	});
 
@@ -62,6 +47,7 @@ const Contact = () => {
 										errors={formik.errors[el.name]}
 										name={el.name}
 										onBlur={formik.handleBlur}
+										touched={formik.touched[el.name]}
 									/>
 								})
 							}
