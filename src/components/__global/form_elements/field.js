@@ -32,8 +32,15 @@ const InputField = (props) => {
 					/>
 				</span>
 			}
-		
-			{ props.errors ? <Notification_standard message={props.errors} /> : '' }
+
+			{ 
+				props.errors ? 
+				<Notification_standard 
+					message={props.errors}
+					notif_type='error-notification' // error-, success-, regular-
+				/> : 
+				''
+			}
 		</aside>
 	)
 }
